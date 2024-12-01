@@ -11,9 +11,9 @@ def main():
     # Main loop
     for _ in range(10):  # Run for 10 iterations
         agent.perceive(env)
-        agent.decide()
-        agent.act(env)
-        env.update_state(agent)
+        action = agent.decide()
+        agent.act(env, action)
+        env.update_state(action)
 
 if __name__ == "__main__":
     main()
